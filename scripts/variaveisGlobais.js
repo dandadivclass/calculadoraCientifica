@@ -11,4 +11,6 @@ export const atalhoFuncoes = {
     t: 'tan('
 };
 
-export let resultadoExibido = false;
+export const estado = {
+    resultadoExibido: false
+};
