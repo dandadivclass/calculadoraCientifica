@@ -1,14 +1,13 @@
-import { elementoVisor, resultadoExibido } from "./variaveisGlobais.js";
+import { elementoVisor, estado } from "./variaveisGlobais.js";
 import { validaDigito, validaOperador, ultimoNumeroContemPonto } from "./validarEntradas.js";
 import { avaliarExpressao } from "./avaliarExpressao.js";
 
-
 export function processarEntrada(entrada) {
-    if (resultadoExibido) {
+    if (estado.resultadoExibido) {
         if (validaDigito(entrada) || entrada.endsWith('(')) {
             elementoVisor.value = '';
         }
-        resultadoExibido = false;
+        estado.resultadoExibido = false;
     }
 
     if (entrada === 'C') {
@@ -26,7 +25,7 @@ export function processarEntrada(entrada) {
         } catch {
             elementoVisor.value = 'Erro';
         }
-        resultadoExibido = true;
+        estado.resultadoExibido = true;
         return;
     }
 
